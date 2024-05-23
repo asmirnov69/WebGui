@@ -152,10 +152,10 @@ int init_imgui()
   ImGuiIO& io = ImGui::GetIO();
 
   // Load Fonts
-  io.Fonts->AddFontFromFileTTF("data/xkcd-script.ttf", 23.0f);
-  io.Fonts->AddFontFromFileTTF("data/xkcd-script.ttf", 18.0f);
-  io.Fonts->AddFontFromFileTTF("data/xkcd-script.ttf", 26.0f);
-  io.Fonts->AddFontFromFileTTF("data/xkcd-script.ttf", 32.0f);
+  io.Fonts->AddFontFromFileTTF("fonts/xkcd-script.ttf", 23.0f);
+  io.Fonts->AddFontFromFileTTF("fonts/xkcd-script.ttf", 18.0f);
+  io.Fonts->AddFontFromFileTTF("fonts/xkcd-script.ttf", 26.0f);
+  io.Fonts->AddFontFromFileTTF("fonts/xkcd-script.ttf", 32.0f);
   io.Fonts->AddFontDefault();
 
   resizeCanvas();

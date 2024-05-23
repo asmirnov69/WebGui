@@ -1,6 +1,6 @@
 CXX = emcc
 OUTPUT = imgui.js
-IMGUI_DIR:=../../imgui
+IMGUI_DIR:=$(HOME)/local/cloned/imgui
 
 SOURCES = main.cpp
 SOURCES += $(IMGUI_DIR)/backends/imgui_impl_glfw.cpp $(IMGUI_DIR)/backends/imgui_impl_opengl3.cpp
@@ -14,7 +14,7 @@ USE_WASM = -s WASM=1
 all: $(SOURCES) $(OUTPUT)
 
 $(OUTPUT): $(SOURCES) 
-	$(CXX)  $(SOURCES) -std=c++11 -o $(OUTPUT) $(LIBS) $(WEBGL_VER) -O2 --preload-file data $(USE_WASM) -I$(IMGUI_DIR) -I$(IMGUI_DIR)/backends
+	$(CXX)  $(SOURCES) -std=c++11 -o $(OUTPUT) $(LIBS) $(WEBGL_VER) -O2 --embed-file fonts $(USE_WASM) -I$(IMGUI_DIR) -I$(IMGUI_DIR)/backends
 
 clean:
-	rm -f $(OUTPUT)
+	rm -f $(OUTPUT) imgui.wasm imgui.data
